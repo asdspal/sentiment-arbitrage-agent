@@ -1,0 +1,53 @@
+# config/config.toml
+
+[agent]
+name = "crypto_sentiment_arbitrage_agent"
+
+[gdelt]
+base_url = "https://api.gdeltproject.org/api/v2/doc/doc"
+
+[sentiment_analysis]
+model = "togethercomputer/llama-2-70b-chat"
+
+[arbitrage]
+exchanges = [
+    { name = "Binance", url = "https://api.binance.com/api/v3/ticker/price", price_key = "price" },
+    { name = "Kraken", url = "https://api.kraken.com/0/public/Ticker", price_key = "c.0" },
+    { name = "Coinbase", url = "https://api.pro.coinbase.com/products", price_key = "price" }
+]
+
+pairs = [
+    "BTC/USDT",
+    "ETH/USDT",
+    "BNB/USDT",
+    "ADA/USDT",
+    "SOL/USDT",
+    "XRP/USDT",
+    "DOT/USDT",
+    "DOGE/USDT",
+    "AVAX/USDT",
+    "LINK/USDT"
+]
+
+top_coins = [
+    "Bitcoin",
+    "Ethereum",
+    "Binance Coin",
+    "Cardano",
+    "Solana",
+    "XRP",
+    "Polkadot",
+    "Dogecoin",
+    "Avalanche",
+    "Terra",
+    "Uniswap",
+    "Chainlink",
+    "Litecoin",
+    "Algorand",
+    "Bitcoin Cash",
+    "Stellar",
+    "VeChain",
+    "Filecoin",
+    "TRON",
+    "Polygon"
+]
